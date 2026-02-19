@@ -1,0 +1,73 @@
+
+%Editing commands
+
+%Indicators of information that needs to be added or edited
+%These do not disappear in final mode
+\newcommand{\toAddTable}{{\color{purple}[TABLE REFERENCE TO ADD HERE]}}
+\newcommand{\toAddNum}{{\color{red}[NUMBER TO ADD HERE]}}
+\newcommand{\toAddCite}{{\color{red}[CITATION TO ADD HERE]}}
+\newcommand{\toAddFigure}{{\color{orange}[FIGURE REFERENCE TO ADD HERE]}}
+\newcommand{\toEdit}[1]{{\color{BrickRed}[TO EDIT: #1]}}
+
+%Indicators that disappear when in final mode
+\newcommand{\toWrite}[2]{\ifdraft{\color{RoyalBlue}[TO WRITE: #1]}\else#2\fi
+}
+\newcommand{\note}[1]{\ifdraft{\color{color1}[NOTE: #1]}\else\fi
+}
+%Command to say that the number was hard coded
+\newcommand{\hardCoded}[1]{\ifdraft{\color{red}#1}\else#1\fi}
+\newcommand{\coded}[1]{\ifdraft{\color{ForestGreen}#1}\else#1\fi}
+
+
+\newcommand{\toVerify}[1]{
+    \ifdraft
+        {\color{blue}[TO VERIFY: #1]}
+    \else 
+        #1
+    \fi
+}
+
+\newcommand{\needEvidence}[2]{%
+  \ifdraft
+    {\color{RedOrange}[}#1, {\color{RedOrange}I pulled this out of my ass, needs evidence to support it]}%
+  \else
+    #2%
+  \fi
+}
+
+\makeatletter
+\newif\ifdraft
+% Set \draftfalse if the document class is loaded with [final], else \drafttrue
+\@ifclasswith{article}{final}{\draftfalse}{\drafttrue}
+\makeatother
+
+
+\usepackage{etoolbox}
+
+
+\newcommand{\ifend}[2]{%
+  \ifdefstring{\tableversion}{end}{%
+    #2%
+  }{%
+    #1%
+  }%
+}
+
+% Define conditional table input command
+\newcommand{\smartinputtable}[2]{%
+  \ifdefstring{\tableversion}{inline}{%
+    % Inline version: place table here
+    \singlespacing
+    \input{#1}
+    \setstretch{1.5}
+  }{%
+  }%
+}
+
+\newcommand{\smartinputtableend}[2]{%
+  \ifdefstring{\tableversion}{inline}{%
+    \input{#2}
+  }{%
+    \input{#1}
+  }%
+}

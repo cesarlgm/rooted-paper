@@ -1,103 +1,14 @@
 
-\appendix
-\begin{flushleft}
-	\LARGE{\textbf{Appendix}}
-\end{flushleft}
-
-\counterwithin{figure}{section}
-\counterwithin{table}{section}
-\counterwithin{equation}{section}
-
-\section{Tables}
-\FloatBarrier
-{\onehalfspacing
-%\input{\thesispath/results/tables/number_regencies_year.tex}
-%\input{../results/tables/n_regencies_intercensal}
-%\input{\thesispath/results/tables/interncensal_mother_migrant_table.tex}
-\input{\thesispath/results/tables/table_A1.tex}
-\input{\thesispath/results/tables/table_A2.tex}
-\input{\thesispath/results/tables/table_A3.tex} 
-\newpage
-
-
-%\input{\thesispath/results/tables/ifls_birthplace_exposure_paper_men.tex} 
-\newpage
-\input{../analysis/output/table_baseline_birthplace_persistence_young.tex}
-\newpage
-\input{../analysis/output/figure_baseline_bplace_year_paper.tex}
-\newpage
-\input{\thesispath/results/tables/table_A5.tex} 
-\input{\thesispath/results/tables/table_A6.tex}	
-\newpage
-\input{\thesispath/results/tables/table_A7.tex}	
-
-%\input{\thesispath/results/tables/intercensal_birthplace_paper_husband.tex}
-\newpage
-
-
-
-%\input{\thesispath/results/tables/intercensal_low_high_flfp_migration.tex}
-\newpage
-
-
-\input{\thesispath/results/tables/table_A8.tex}
-\input{\thesispath/results/tables/country_data_sources_thesis.tex}
-\FloatBarrier
-
-%\input{\thesispath/results/tables/ifls_birthplace_exposure_paper.tex} 
-
-
-\orange{\input{\thesispath/results/tables/main_effects_supporting_identification.tex}}
-\input{\thesispath/results/tables/table_A10.tex} 
-\orange{\input{\thesispath/results/tables/birthplace_by_presence_of_children.tex}}
-%\input{\thesispath/results/tables/same_geo_coverage.tex}	
-
-}
-
-\FloatBarrier
-\newpage
-\section{Figures}
-\FloatBarrier
-%\input{\thesispath/results/figures/regency_location_map_thesis.tex}	
-\input{\thesispath/results/figures/figure_B1.tex}		
-%\input{\thesispath/results/figures/intercensal_birthplace_age_cut.tex}	
-%\input{\thesispath/results/figures/ifls_provinces_thesis.tex}	
-\input{\thesispath/results/figures/figure_B2.tex} 
-\input{\thesispath/results/figures/figure_B3.tex}	
-\input{\thesispath/results/figures/figure_B4.tex}
-\input{../analysis/output/figure_coefplot_other_outcomes_paper.tex}
-\input{\thesispath/results/figures/figure_B6.tex} 
-\orange{\input{\thesispath/results/figures/appendix_selection_information.tex}} 
-\input{\thesispath/results/figures/figure_B7.tex}	
-%\input{\thesispath/results/figures/ancestral_norms.tex}	
-\input{\thesispath/results/figures/figure_B8.tex}	
-%\textbf{}\input{\thesispath/results/figures/husband_exposure.tex}	
-
-\input{\thesispath/results/figures/figure_B9.tex}
-
-\input{../analysis/output/figure_regency_characteristics_paper.tex}
-
-	
-\input{../results/figures/figure_B10.tex}
-\input{../results/figures/figure_B11.tex}
-\input{\thesispath/results/figures/figure_B12.tex}	
-	
-\orange{\input{\thesispath/results/figures/intercensal_employment_child_hh.tex}}
-%\input{\thesispath/results/figures/intercensal_survey_coverage.tex}	
-
-
-\orange{\input{\thesispath/results/figures/correlates_flfp.tex}}
-\FloatBarrier
-
-
-
 
 \section{Data appendix}
 
 
 \subsection{Cross-country data}
 \label{sec:country_data}
-I use harmonized cross-country data from IPUMS International to build figure \ref{fig:figure_1} and table \ref{tab:table_4}. They show local employment rates for men and women aged 18-64 for a cross-section of countries. For all of them, I use the latest decennial census sample available. In most cases, this corresponds to 2010 or a year close to it.
+I use harmonized cross-country data from IPUMS International to build Figure \ref{fig:figure_1} and
+Rable \ref{tab:table_4}. They show local employment rates for men and women aged 18-64 for a
+cross-section of countries. I use the latest decennial census sample available. In
+most cases, this corresponds to 2010 or a year close to it.
 
 I define employment using the harmonized employment status ({\tt empstat}). When this variable is not available, I use the class of worker instead ({\tt classwkr}). In these cases, I define a person as employed if they report being a self-employed, salaried, or unpaid worker. In China, employed workers are those who reported working at least 1 day in the past week. Despite these slight definition differences, table \ref{table:table_A8} shows that the employment rates I obtained are in line with FLFP rates reported by the International Labor Organization and the World Bank \citep{InternationalLaborOrganization2021}.\footnote{The only exception is the Philippines, where the data from IPUMS International implies much lower employment rates. In my data, I obtained a female employment rate of 33\% for women aged 18-64. The ILOSTAT database reports a female labor force participation rate of 48\% for 15+ women in 2010. The gap between these two figures cannot be accounted for by female unemployment, which is of the order of 4\%. That said, I am interested in within-country dispersion. These discrepancies are second-order as long as data collection is consistent within the country.} The differences in the age range I consider drive the discrepancies in the United States, Vietnam, Thailand, and China.
 
@@ -147,7 +58,7 @@ fixed-boundary definition for the regency of current residence. In each survey, 
 
 
 
-\section{The Empirical Strategy}
+\section{Additional Details: Empirical Strategy}
 \label{sec:ap_empirical}
 
 \subsection{Place and women's labor supply: the identification challenge}
@@ -210,23 +121,5 @@ Under the constant omitted variable bias assumption, I can isolate the birthplac
 	&=&\boldsymbol\pi_a
 \end{eqnarray}
 this expression also shows that identification does not necessarily require constant bias across all \textit{all} migration ages. If, instead, bias is constant only within some age ranges, I can still identify the effects within these ranges. For example, suppose there is reason to believe that the bias for women who migrated between 0 to 6 years is different than for those who migrated between the ages of 7 and 15. If constant selection holds \textit{within} these ranges, I can still identify the place effects within the 0 to 6 and 7 to 15 ranges, respectively. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

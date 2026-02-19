@@ -1,0 +1,66 @@
+\documentclass[11pt,final]{article}
+
+%There are two possible versions
+%hs = start of high school expansion
+%secondary =   start of secondary expansion
+% Define the version
+\newcommand{\tableversion}{inline} % or "end"
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Loading user-written commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{code/paper_preamble}
+\input{code/paper_preamble_user_defined_commands}
+\input{code/paper_edition_commands}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Loading commands code-outputed commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{code/title_page.tex}
+
+\usepackage{xr-hyper}
+\externaldocument{rooted_decisions_appendix} 
+
+
+\begin{document}
+
+\maketitle
+
+
+\input{code/abstract}
+
+
+
+\noindent\textbf{Keywords:} gender inequality, local labor markets, place effects \\
+\noindent\textbf{JEL Codes:} J16, R19, O18
+
+\newpage
+
+
+
+\input{code/introduction.tex}
+
+\input{code/data}
+
+%\input{code/summary_statistics}
+
+%\input{code/motivating_facts}
+
+%\input{code/empirical_strategy}
+
+%\input{code/discussion}
+
+%\input{code/conclusions}
+
+
+\clearpage
+\bibliographystyle{aea}
+\bibliography{./library}{}
+
+
+
+	
+	
+\end{document}
