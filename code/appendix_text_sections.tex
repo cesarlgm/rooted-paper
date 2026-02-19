@@ -5,17 +5,31 @@
 
 \subsection{Cross-country data}
 \label{sec:country_data}
-I use harmonized cross-country data from IPUMS International to build Figure \ref{fig:figure_1} and
-Rable \ref{tab:table_4}. They show local employment rates for men and women aged 18-64 for a
-cross-section of countries. I use the latest decennial census sample available. In
-most cases, this corresponds to 2010 or a year close to it.
-
-I define employment using the harmonized employment status ({\tt empstat}). When this variable is not available, I use the class of worker instead ({\tt classwkr}). In these cases, I define a person as employed if they report being a self-employed, salaried, or unpaid worker. In China, employed workers are those who reported working at least 1 day in the past week. Despite these slight definition differences, table \ref{table:table_A8} shows that the employment rates I obtained are in line with FLFP rates reported by the International Labor Organization and the World Bank \citep{InternationalLaborOrganization2021}.\footnote{The only exception is the Philippines, where the data from IPUMS International implies much lower employment rates. In my data, I obtained a female employment rate of 33\% for women aged 18-64. The ILOSTAT database reports a female labor force participation rate of 48\% for 15+ women in 2010. The gap between these two figures cannot be accounted for by female unemployment, which is of the order of 4\%. That said, I am interested in within-country dispersion. These discrepancies are second-order as long as data collection is consistent within the country.} The differences in the age range I consider drive the discrepancies in the United States, Vietnam, Thailand, and China.
+Figure \ref{fig:figure_1} and Table \ref{tab:table_4} report local employment rates for men and
+women aged 18--64 across a broad cross-section of countries, using IPUMS International census
+samples and data from the Indian Census. For each country, I use the most recent available census, typically from 2010 or a nearby
+year.
 
 
-For all countries, I compute subnational employment rates at the lowest geographic unit available. For most countries, this corresponds to a district, a county, or a municipality. The only exception is the United States, where I compute these rates by commuting zone \citep{Autor2013}. Table \ref{tab:country_sources} provides further details on the unit of aggregation and samples used. I winsorize the employment rates at the 5th and 95th percentiles by country. This reduces the possibility that very small regions drive the dispersion I observe within countries.
+I define employment using the harmonized \emph{employment status}. For countries where this variable is unavailable, I construct employment from \emph{class of worker}, classifying people as employed if they report being self-employed, salaried, or unpaid workers. In China, employment is defined as having worked at least one day in the past week.
 
-\purple{Figure \ref{fig:figure_1} also includes information from India. Data for India is not available on IPUMS International. I extracted this information from tabulations of population and employment by district, sex, and age from the 2011 Indian Census \citep{Commissioner2011}. I restricted the sample to people aged 15 to 59 and computed the share of people declaring to be main workers. Main workers are people who work at least six months a year.}
+Despite these definitional differences, Table \ref{table:table_A8} shows that the resulting
+employment rates closely align with female labor force participation (FLFP) rates reported by the
+International Labor Organization and the World Bank \citep{InternationalLaborOrganization2021}.
+\footnote{The only exception is the Philippines, where IPUMS International data imply substantially
+lower employment rates. In my data, the female employment rate for women aged 18--64 is 33\%,
+compared to an FLFP rate of 48\% for women aged 15+ in 2010 reported by ILOSTAT. This gap cannot be
+explained by female unemployment, which is around 4\%. However, as the analysis focuses on
+within-country dispersion, these discrepancies are second-order as long as measurement is consistent
+within country.} Remaining discrepancies for the United States, Vietnam, Thailand, and China are
+driven by differences in age ranges.
+
+I compute subnational employment rates at the lowest available geographic unit, which in most countries corresponds to districts, counties, or municipalities. The exception is the United States, where rates are computed at the commuting zone level \citep{Autor2013}. Table \ref{tab:country_sources} provides details on the units of aggregation and underlying samples.
+I winsorize the district employment rates at the 5th and 95th percentiles within each country to
+limit the influence of very small regions on the within-country dispersion.
+
+Data for India come from the 2011 Indian Census tabulations published by the Indian Office of the Registrar General \citep{Commissioner2011}. I compute district employment rates as the share of individuals aged 15--59 who report being main workers, defined as those working at least six months per year.
+
 
 \subsection{Indonesian Family Life Survey}
 \label{sec:ifls_appendix}
