@@ -1,0 +1,62 @@
+
+%Small indent for tables
+\newcommand{\txsp}{\hspace{3mm}}
+
+% Vertical gaps for tables and figures
+\newcommand{\smallGap}{\vspace{.5cm}}
+\newcommand{\largeGap}{\vspace{1cm}}
+
+%\addbibresource{biblio.bib}
+\setlength{\parindent}{0ex}
+\setlength{\parskip}{1.1em}
+\linespread{1.2}
+\newenvironment{tight_enumerate}{
+	\begin{enumerate}
+		\setlength{\topsep}{0pt}
+		\setlength{\itemsep}{0pt}
+		\setlength{\parskip}{0pt}
+	}{\end{enumerate}}
+\newenvironment{tight_itemize}{
+	\begin{itemize}
+		\setlength{\topsep}q
+		{0pt}
+		\setlength{\itemsep}{0pt}
+		\setlength{\parskip}{0pt}
+	}{\end{itemize}}
+
+
+
+
+\newcommand{\sym}[1]{\rlap{#1}}
+
+
+%Shortcuts for itemize
+\newcommand{\bitem}{\begin{itemize}}
+\newcommand{\eitem}{\end{itemize}}
+\newcommand{\beqns}{ \begin{eqnarray*}}
+\newcommand{\eeqns}{ \end{eqnarray*}}
+\newcommand{\beqn}{ \begin{eqnarray} }
+\newcommand{\eeqn}{ \end{eqnarray} }
+\newcommand{\btight}{\begin{tight_itemize}}
+\newcommand{\etight}{\end{tight_itemize}}
+\newcommand{\scsubref}[1]{(\textsc{\subref*{#1}})}
+
+%Color shortcuts
+\newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\orange}[1]{\textcolor{orange}{\bfseries #1}}
+\definecolor{lightgray2}{gray}{0.975}
+\definecolor{lightgray3}{gray}{0.75}
+\newcommand{\gray}[1]{\textcolor{lightgray3}{#1}}
+\newcommand{\green}[1]{\textcolor{ForestGreen}{#1}}
+
+\renewcommand{\emph}[1]{\textit{#1}}
+
+\usepackage{letltxmacro}
+\LetLtxMacro{\oldsubref}{\subref}
+\renewcommand{\subref}[1]{\textsc{\oldsubref{#1}}}
+
+%Math commands
+\newcommand{\expect}{\mathbb{E}}
+\newcommand{\nopsubref}[1]{\textsc{\oldsubref*{#1}}}
+
+

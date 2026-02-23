@@ -1,0 +1,74 @@
+
+
+
+%Modifying the way the date is shown
+\renewcommand{\today}{\ifcase\month\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi\ \number\year}
+\renewcommand{\abstractname}{}
+
+
+\usepackage[dvipsnames]{xcolor}
+
+\definecolor{color1}{HTML}{dd2c00}
+\definecolor{color2}{HTML}{0B0C6B}
+\usepackage[hyphens]{url}
+\usepackage[colorlinks=true, citecolor=color2, filecolor=color1, linkcolor=color1, urlcolor=black, breaklinks=true]{hyperref}
+
+\hypersetup{%
+	pdfborder = {0 0 0},
+}
+
+
+%Modifying the main font
+%\usepackage{mathpazo}
+\usepackage{libertine}
+\usepackage{newtxmath} 
+\usepackage{array,eqnarray,amsmath,amsbsy,amsthm,amssymb}
+
+%Packages for table and figure placing and formatting
+\usepackage{threeparttable}
+\usepackage{adjustbox}
+\usepackage{booktabs}
+\usepackage{placeins}
+\usepackage{microtype}
+\usepackage[shortcuts]{extdash}  
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{ifthen}
+\usepackage{tcolorbox}
+\usepackage{tabularx, longtable}
+\usepackage{appendix}
+\usepackage{caption,subcaption}
+\usepackage{ulem}
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+\usepackage{pdflscape}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{natbib}
+\usepackage{animate}
+\usepackage{rotating}
+\usepackage{xifthen}
+\usepackage[a4paper, top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+%Tikz
+\usepackage{tikz} 
+\usepackage{chronosys}
+\usepackage{setspace}
+
+\usetikzlibrary{calc, arrows.meta, intersections, patterns, positioning, shapes.misc, fadings, through, decorations.pathreplacing}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
+
+\tikzstyle{levelbox} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=orange,fill=orange!80, text=white, font=\bfseries]
+\tikzstyle{trackbox} = [rectangle,  rounded corners, minimum width=3.2cm, minimum height=1cm, text centered, draw=Red, fill=Red!90, text=white, text width=3cm]
+\tikzstyle{explbox} = [rectangle,  rounded corners, minimum width=3.2cm, minimum height=1cm, text centered, draw=blue, fill=blue!60, text=white, text width=3cm]
+\tikzstyle{arrow} = [thick,->,>=Stealth, draw=black!50]
+
+
+
+
+%Formatting of captions
+\captionsetup{font=sc}
+\captionsetup[subfloat]{font=sc}
+

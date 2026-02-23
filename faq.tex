@@ -1,0 +1,86 @@
+\documentclass[a4paper, 11pt]{article}
+
+\input{commandspreamble.tex}
+
+\newcommand{\sigmab}{\boldsymbol\sigma}
+\newcommand{\agesigma}{\boldsymbol\sigma_a}
+\newcommand{\plim}{\text{plim }}
+
+\definecolor{DarkGreen}{rgb}{0.0, 0.26, 0.15}
+\definecolor{LightGreen}{rgb}{0.98, 0.94, 0.9}
+
+\newtheorem{assumption}{Assumption}
+
+\excludecomment{answer}
+
+
+\onehalfspacing
+
+\begin{document}
+	
+	\title{JMP: answers to questions I have gotten}	
+	\date{{ \normalsize This version: \today  \vspace{.2cm} }}
+
+
+	\maketitle
+	
+	\benu
+		\item \textbf{Why are the effects so concentrated in a specific range of ages?}
+		I do not put a lot of weight on the jump at any given age because these estimates are imprecise. Rather, I want to focus the attention on the fact that there a clear pattern of increase from 6 to 15 years old. 
+		
+		Two things I need to make clear here:
+		\bitem
+			\item Are the coefficients from 0 to 6 statistically different from each other?
+			\item Can I show that the 6 coefficient is lower than the 15 coefficient.
+		\eitem 
+		\item \textbf{Why not use exposure to exogenous shocks?}
+		
+		At some point it was suggested that it was better to use exposure to exogenous shocks as a more credible strategy. For the sake of the argument let's use exposure to climate shocks. 
+		
+		The idea is the following: women would be hit by climate shocks that induce migration. Timing of migration would be exogenous because migration is driven by the timing of the shock. Then I can compare those migrating early, vs those migrating late:
+		
+		\beqn
+			e_{it}=\delta_{c(i)t}+\beta_1 high_i+\beta_2 late_i+\beta_3high_i\times late_i+\varepsilon_i
+		\eeqn
+		
+		where here $\beta_3$ would give an estimate of the migration the birthplace effect. 
+		
+		There are two issues here that make this approach difficult with my data:
+		\bitem 
+			\item How to identify shock-driven migration episodes. If we are thinking about climate, I could restrict the sample to locations and years where the climate shock happened. This would likely substantially reduce my sample. Suppose I limit to 20 percentile shocks. This would likely slash my sample by a fifth, leaving me with about 5000 observations and reducing precision. Still, there is no guarantee that those migration episodes were driven by the shock.
+			\item I need a shock that is extensive enough, and with enough frequency so that my sample does not plummet. This only seems feasible with weather shocks.
+		\eitem 
+		Still, this not solve the endogeneity of the destination choice. 
+		
+		This might be feasible, but it requires a lot of work. I would only do it if people push back a lot. One thing that I could do is to see the distribution of ages of migration in my data. If I have a generous spread of years, then something with rain might be feasible.
+		
+		
+		\item \textbf{How to think about about the destination?}
+		
+		One limitation with the baseline specification is that 
+		
+		\item \textbf{Indonesia experience structural transformation over this period. How does that modify your results?}
+		
+		I am being very flexible on how the destination enters, and even thought the country has gone through a lot of changes there is a strong persistence in rates of FLFP.
+		
+		I think there are two ways to look into this:
+		\bitem
+			\item Show female labor force participation by year and show that even though the level changes, the dispersion persists.
+			\item Redo the results by census year. I probably need to bin some age fixed effects.
+			\item Results look similar when I change the reference year for the $p_o$
+		\eitem 
+		
+		\item \textbf{What about distance?} 
+		
+		Here I would like to know two things:
+		\bitem
+			\item How far these migration episodes happen.
+			\item Are there differences in distance of migration across age cohorts.
+		\eitem 
+		
+		\item \textbf{Does industry or occupation matter?}
+
+		\item \textbf{What about the DiD literature?}
+	\eenu
+	
+\end{document}

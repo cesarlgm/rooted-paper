@@ -1,0 +1,153 @@
+\section{Empirical strategy and results}
+\label{sec:empirical_strategy}
+I start this section by showing that, conditional on the current place of residence, birthplace is highly predictive of women's labor supply in adulthood. This persistence can reflect the causal effect of birthplace or a spurious correlation driven by women's unobserved characteristics. I use data on age at migration to separate these two sources of variation and show evidence that the longer female migrants stay in their birthplace, the stronger its predictive power. I interpret this as evidence that a longer stay has a causal effect on women's labor supply decisions.
+
+
+\subsection{Birthplace is highly predictive of women's labor supply}	
+\label{sec:explanation}
+I start by comparing the labor supply of women who \textit{live in the same location} but were born in different regencies using a specification inspired by the epidemiological approach from \cite{Fernandez2009}. I regress a dummy equal to one if the person is employed in year $t$ ($ e_{it}$) on year by current-regency fixed effects  ($\omega_{c(i)t}$), birthplace FLFP rate ($p_{b(i)}$), and a set of individual and regency-level controls $X_{it}$. They might include age, religion, education, etc.
+\begin{eqnarray}
+	\label{eq:childhood_main}
+	e_{it}&=&\omega_{c(i)t}+\boldsymbol b p_{b(i)}+X_{it}\kappa+\varepsilon_{it}
+\end{eqnarray}
+The rationale for including birthplace FLFP rates as a regressor is that they capture all the factors that help determine the regency's aggregate female labor supply \citep{Fernandez2009}.\footnote{\cite{Fernandez2009} focus their exercise on second-generation immigrants in the US to test transmission of gender norms. The analogous exercise in my context would use the children of internal migrants. However, the Intercensal Survey does not track parents' regency of birth.} I compute these rates using data from the 2010 census for all women aged 18 to 64.\footnote{The results are robust to changes in the age range used to compute FLFP rates. The participation rates of women aged 18-64 are almost perfectly correlated with those of women aged 18-50.}
+
+I call the $\boldsymbol b$ slope the birthplace persistence coefficient. It measures the relationship between women's labor supply and the prevailing FLFP in their birthplace after netting out the place of current residence effect. This slope is primarily identified out of contemporaneous differences in labor supply between women who live in the same regency but who were born in different localities.
+
+A large positive $\boldsymbol b$ estimate does not necessarily imply a causal relationship between birthplace FLFP rates and women's choices. Yet, it is interesting as it indicates that birthplace predicts the choices of women who no longer reside there.
+
+
+
+\tftext{\input{../analysis/output/table_baseline_birthplace_persistence.tex} }
+
+
+Table \ref{table:table_6} shows birthplace persistence coefficient ($\boldsymbol b$) estimates. Column (1) shows a 0.33 estimate for a baseline specification that includes no additional controls. To illustrate this magnitude, consider two women, Putri and Amanda, who both live in Jakarta. Putri was born in the city of Probolinggo in East Java, where the FLFP rate is 40\%, while Amanda was born in Sukoharjo in Central Java, where the rate is 62\%. These rates place  Probolinggo and Sukoharjo at approximately the 25th and the 75th FLFP percentiles. The 0.33 coefficient implies that Putri is 7.3 percentage points less likely to work than Amanda, a 17\% difference relative to the mean employment rate in my data. Controlling for women's age and education in columns (2) and (3) barely modifies the estimate.\footnote{I find similar results when narrowing the sample to women who migrated at 17 years old or younger, a group whose destination location is more likely to be determined by their parents rather than their own choices (see appendix table \ref{table:table_A4}).}
+
+
+
+Table \ref{table:table_6} also shows that the large birthplace persistence in labor supply is mostly exclusive to women. Columns (4) to (6) display estimates from regressions relating men's employment to their birthplace's \textit{FLFP} rate. All estimates are below 0.10 (about 30\% of women's) and imply little variation in men's employment rates across regencies. For example, the estimate in column (6) implies an IQR gap of only 1.7 p.p. 
+
+
+
+
+The persistence in women's employment choices could still be driven by variation in other demographic or socioeconomic factors across regencies. In table \ref{table:table_7}, I use the rich data from the IFLS to rule out other potential explanations. First, in columns (1) to (3), I reproduce the persistence estimates for the IFLS female migrants using specifications analogous to those in  table\ref{table:table_6}. Reassuringly, these results confirm the Intercensal Survey estimates, with a similarly large implied IQR of 8 p.p. and little persistence for men.
+
+
+\tftext{\input{\thesispath/results/tables/table_7.tex}}
+
+Columns (5) to (8) of table  \ref{table:table_7} rule out childhood socioeconomic status and maternal labor supply as the main drivers of these results. Columns (5) and (6) examine the role of childhood socioeconomic conditions, using variables such as the number of books, the number of people per room, and whether their father was in formal employment. These variables come from a set of questions about respondents' households when they were 12 years old. Adding these controls has little effect on the estimates. Columns (7) and (8) test whether differences in maternal labor supply across regencies drive the employment persistence. Previous literature highlights the effect of maternal labor supply on women's choices \citep{Fernandez2004,Morrill2013,Olivettib}. High-FLFP regions have more working mothers, which could lead to the observed persistence. I can link a subset of IFLS women to their mothers. For these, I computed the share of years their mother reported having worked and included this as a control in the regression. Column (7) recalculates the persistence for this smaller sample, while column (8) controls for the mother's work history. The presence of a working mother is positively associated with the daughter's labor supply. Nevertheless, the persistence estimate in column (8) is still sizable, indicating it is not solely driven by maternal labor supply differences across regencies. Since these additional controls may not fully alleviate concerns that selection drives this persistence, I turn to a strategy that exploits migration age below.
+
+
+
+
+\subsection{Birthplace persistence is stronger the longer you stay}	
+\label{sec:age}
+
+In this section, I exploit differences in migration age to argue that birthplace persistence reflects a causal effect. First, I illustrate how migration age data helps me identify the birthplace effects and describe the required identification assumptions. Next, I show that persistence is stronger the longer women stay in their birthplace and is primarily driven by access to paid employment. The section concludes by showing evidence supporting my identification assumptions.
+
+\subsubsection{Exploiting data on length of stay}
+I augment expression \eqref{eq:childhood_main} by (i) allowing the coefficient on FLFP to vary by migration age ($\boldsymbol{b_a}$), and (ii) allowing the regency fixed effects to vary by year and migration age ($\omega_{c(i)at}$):
+\begin{eqnarray}
+	\label{eq:childhood_length}
+	e_{it}&=&\omega_{c(i)at}+\boldsymbol b_a p_{b(i)}+X_{it}\kappa+\varepsilon_{it}
+\end{eqnarray}
+
+This specification augments \cite{Fernandez2009}'s approach by using a strategy inspired by \cite{Chetty2018}. The age-specific persistence coefficients $b_a$ are identified from variation within regency-year-age cells. In other words, they stem from comparing the labor supply choices of women living at the same destination regency but who were initially exposed to different FLFP rates for different durations. Therefore, differences in the $b_a$ across ages are driven \textit{only} by differences in the exposure length to the origin FLFP.\footnote{The regency fixed effects also vary by survey year to allow flexibility on the effect of the current labor market. My dataset includes data from 1985 to 2005, and Indonesia experienced important structural changes during this time. For example, there was a 15\% decline in the share agricultural employment, which went from 52\% in 1991 to 44\% in 2005 \citep{WorldBankDI}.}
+
+
+In specification \eqref{eq:childhood_length}, I focus on the effect of the origin labor market. 
+Two reasons support this choice. First, persistent effects from the origin location, even after the exposure has ceased, are interesting in their own right. Second, by considering the origin rather than the destination, I can argue more effectively that any effects stem from women's labor supply choices rather than differences in labor demand structures across locations.
+
+I can decompose the age-specific slopes into a cumulative causal effect up age $a$ ($\boldsymbol{\sigma}_{a}$), and a selection term $\boldsymbol{\gamma}$:
+\beqns
+\boldsymbol b_a&=&\boldsymbol \sigma_a+\boldsymbol\gamma
+\eeqns
+the selection term  $\gamma$ reflects omitted variable bias (See appendix \ref{sec:ap_empirical} for details). This parameter captures the fact that women from the same origin are likely to share characteristics that make them more (or less) likely to work but which are not driven by a place effect. For example, parents in areas with high FLFP might be richer and more likely to invest in their daughters' education. Under the key assumption that omitted variable bias is constant across migration age (i.e., $\gamma$ is age-independent), I can identify the causal effect at any given age ($\pi_a$) by subtracting the persistence coefficients across migration ages:\footnote{\cite{Chetty2018} identify the place effects by exploiting variation in the age of migration across siblings within the same family. I cannot apply this strategy to my data because neither the Intercensal Survey nor IFLS contains sibling information.}
+\beqns
+\boldsymbol\pi_a&=&\boldsymbol b_{a+1}-\boldsymbol b_a
+\eeqns
+Moreover, the coefficient for the least exposed cohort gives an estimate of the omitted variable bias: $\boldsymbol{\gamma}=\boldsymbol{b}_0$.
+
+Adding regency-year-migration age fixed effects imposes considerable data requirements. Identifying the birthplace coefficients requires regency-year-age cells big enough to contain women from different origin regencies. However, because the number of people migrating at any given age is small relative to the number of regencies, I am forced to bin migration ages into multi-age cells: (i) 0 to 3, (ii) 4 to 7, (iii) 8-11, (iv) 12 to 14 years old, and one-year cells thereafter. Appendix table \ref{tab:table_A3} shows that this grouping creates cells of reasonable sizes.
+
+When sample size becomes a concern, I also adopt a less demanding specification that uses regency-by-year ($\omega_{c(i)t}$) and year-by-migration age fixed effects ($\lambda_{at}$):
+\begin{eqnarray}
+	\label{eq:childhood_length_less}
+	e_{it}&=&\omega_{c(i)t}+\lambda_{at}+\boldsymbol b_a p_{b(i)} +\boldsymbol d_a p_{c(i)}+X_{it}\kappa+\varepsilon_{it}
+\end{eqnarray}
+Where I control for the current regency FLFP ($p_{c(i)}$) to capture the effect of longer exposure to the current location. While this specification offers the advantage of being less demanding than \eqref{eq:childhood_length}, it restricts how the destination regency affects women's choices. In practice, however, the results under  \eqref{eq:childhood_length}
+and  \eqref{eq:childhood_length_less} are quite similar.
+
+
+\subsubsection{Longer stay in high-FLFP regency make women more likely to work}
+
+Figure \ref{fig:figure_3} displays birthplace persistence estimates ($\boldsymbol{b_{a}}$)  by migration age for both women and men. My sample remains restricted to people who left their birthplace at 17 or younger. The regressions control for a quadratic polynomial in age, as well as regency-year-age and education-level fixed effects. The coefficients were rescaled to allow direct interpretation as the implied gap between women born in regencies at the 75th FLFP percentile versus the 25th percentile.
+
+\tftext{\input{../analysis/output/figure_coefplot_other_outcomes_paper.tex}}
+
+
+Figure \ref{fig:figure_3} shows a striking slope pattern: women with longer exposure to high-employment locations are more likely to work. Women's slopes increase from 5.1 p.p. for the least exposed women (those leaving at age three or younger) to 10.7 p.p. for the most exposed. Women leaving a high-FLFP regency before the age of three have minimal exposure to their birthplace, and yet these results imply that they are more likely to work than women who left low-FLFP regencies at the same age. I interpret the 5.1 p.p. slope as reflecting unobservable differences that make women from high-FLFP more likely to work from the outset. In contrast, I ascribe the 5.6 p.p. increase in the slopes as stemming from the effect of longer exposure to high-FLFP regencies.
+
+
+These results suggest that place effects play an important role in driving geographic differences in women's labor supply. The 5.6 p.p. increase is large when compared to multiple benchmarks: it is approximately one-fourth of the gap in FLFP between the 75th and 25th regencies, and it is 14\% of the employment rate in the sample (40\%).\footnote{The employment rate for the women in the young migrant sample has changed remarkably little since 1985. It was 36\% in 1985, 40\% in 1995 and 42\% in 2005.}
+
+Figure \ref{fig:figure_3} also suggests that birthplace effects act before late adolescence. The slopes after 14 years old are roughly constant. This suggests that additional exposure late in adolescence has little effect on women's labor supply choices. Although figure \ref{fig:figure_3} shows a sharp increase at 12-14 years old, these slopes are noisy. The effects may be more gradual than figure \ref{fig:figure_3} suggests.\footnote{I can reject the hypothesis that all slopes are the same at the 1\% significance level. Moreover, the 12-14 slope is significantly greater than the 0-3 slope at the 1\% level.} In fact, in appendix figure \ref{fig:figure_B3} I estimate specification \eqref{eq:childhood_length_less}, which allows more disaggregated age bins. While overall qualitatively similar, the estimates at early ages are more unstable, with slight increases at 3-5 and after 6 years old, which could be consistent with more gradual exposure effects. 
+
+Figure \ref{fig:figure_3} also presents estimates for men. Like women, men from high-FLFP locations are likelier to work at the outset. However, all slopes from age four onwards are smaller than those for ages 0-3. A decline in the slopes suggests that very early exposure to these locations makes men less likely to work, though the patterns are less clear than women's. In all, there is a decline of 3.3 p.p. between the first and last slope. If we were to take this decline seriously and combine it with women's results, they would imply a decline of 8.9 p.p. in the gender gap in employment because of longer exposure to high-FLFP regencies.
+
+The gender differences in figure  \ref{fig:figure_3} give less support to several explanations for these results. For example, if when moving households started prioritizing their children's employment opportunities between 8 and 14 years old, one would expect these changes to affect both men and women. Yet, there is little change in men's coefficients during these ages. To account for these results, it must be that parents from high-FLFP regencies prioritize more their daughters prospects than their son's. 
+
+The clear contrast across genders also arises in IFLS data.  Figure  \ref{fig:figure_B4} shows estimates from a variation of specification \eqref{eq:childhood_length_less} using the IFLS. The figure reproduces closely the increasing persistence for women, coupled with little overall movement for men. Although qualitatively similar, the IFLS estimates imply a birthplace effect of 9.4 p.p., about twice the size of my main Intercensal Survey estimates. Moreover, the persistence tapers off later: at 15-16 rather than 12-14.
+
+\subsubsection{Longer stay translates into similar patterns for other outcomes}
+Figure \ref{fig:figure_4} shows that longer exposure to high-FLFP labor markets translates into higher paid employment and working hours. Panel (a) breaks down employment into paid and unpaid. Unpaid work accounts for about a 35\% of all female employment. The documented increase in employment would be unlikely to represent more economic independence for women if it were entirely driven by unpaid work. However, panel (a) shows these results are driven by \emph{paid employment}. 
+The rise in the coefficients between 0 and 17 years old translates into an increase of 3.8 p.p. in the likelihood of paid employment. 
+This is 68\% of the effect on any employment from figure  \ref{fig:figure_3}. This contrasts with the lack of any clear patterns for unpaid work.
+
+%Change this for other outcomes
+\tftext{\input{../analysis/output/figure_coefplot_main_paper.tex}}
+
+Figure \ref{fig:figure_4}  panel (b)  shows results for weekly work hours. Since hours data is unavailable in the 2005 Intercensal Survey, these results rely only on the 1985 and 1995 surveys. Although the estimates are noisier, they align with the previous results: staying in high-FLFP places raises women's labor supply. The overall increase in the slopes up to 17 years old translates into an increase of 3 weekly hours. This is 33\% relative to the mean of 15 hours.
+
+So far, all the evidence presents a consistent picture: longer stay in high-FLFP regencies translates into higher attachment to the labor market in adulthood. More-exposed women are more likely to be employed and work longer hours. A natural question is whether they earn higher wages. Appendix figure \ref{fig:figure_B6} shows birthplace persistence coefficients for regressions with total earnings and hourly wages as dependent variables. They restrict the sample to the much smaller group of migrant women with non-zero earnings in the 1995 survey, as earnings information is unavailable in 1985 and 2005. Because of the small sample, I am forced to use wider age bins. The results are noisy, but they give a vague suggestion that longer exposure to high-FLFP locations could lead to higher earnings. 
+
+Finally, figure \ref{fig:figure_5} presents results for marriage and fertility outcomes. Marriage and fertility decisions are often intertwined with local norms and women's labor supply decisions \citep{Fernandez2009,Jayachandran2021}. For all the panels, the birthplace FLFP remains as the main regressor.  Panel (a) shows results for the number of children in the household and panel (b) shows results for age at first marriage (for those already married). All waves from the Intercensal Survey include data on the number of children present in the household, but data on age at first marriage is unavailable in 1985. Consequently, the estimates in panel (b) are based on a smaller sample and are noisier. Nevertheless, both panels present a picture aligned with small but significant fertility reductions and marriage delays. The decline in the slopes from ages 0 to 15 in panel (a) implies a reduction in fertility of 0.14 children of all ages (8.7\% of the mean of 1.59 children). There are no such effects for men (see appendix figure \ref{fig:figure_B5}). Similarly, panel (b) suggests small delays in marriage.   The slope increase between 4 and 16 implies a five-month delay of marriage (2.8\% relative to a mean age of 18).
+
+\tftext{\input{\thesispath/results/figures/figure_5.tex}}
+
+
+
+\subsubsection{The data supports the constant selection assumption}
+
+The causal interpretation of the birthplace persistence coefficients hinges on the assumption that selection is independent of migration age. More precisely, conditioning on the current location and other controls, I require the relationship between women's unobserved characteristics and birthplace FLFP to be constant across migration ages. Below, I present results showing that selection along several observable dimensions is fairly constant across emigration ages, suggesting the likely validity of this identification assumption in my dataset.
+
+
+Consider the identification assumption as analogous to parallel trends in Difference-in-Differences. While I anticipate that there are unobservable differences between women from high and low FLFP regions, this does not pose an issue for my approach. However, if factors correlated with female employment change differently across migration ages for these two groups, I might incorrectly attribute this variation to a causal effect. %Thus, the absence of parallel trends could lead to finding a causal effect where none exists.
+
+
+I cannot test the constant selection assumption. However, I can test whether the correlation between the birthplace FLFP and several observable characteristics is the same no matter the age at which women migrated. To do this, I use a slight modification of my main specification in \eqref{eq:childhood_length} and regress women's characteristics $y_i$ on regency-year-age fixed effects (when possible), birthplace FLFP $p_{b(i)}$, and interactions between migration age and birthplace FLFP:\footnote{When regency-year-age fixed effects cannot be included because, for example, the outcome is a destination regency characteristic, I add year and migration age fixed effects.} 
+\beqn
+\label{eq_constant_tests}
+y_{i}=\omega_{c(i)at}+\beta p_{b(i)}+\sum_{a=3}^{a=18}\beta_a 1_a\times p_{b(i)}+X_i\kappa+\varepsilon_{it}
+\eeqn
+as in previous sections, I normalized the FLFP rates so that the slopes show the IQR gaps.
+
+
+In model \eqref{eq_constant_tests}, I set 0 to 3 as the base category. Therefore, the $\beta_a$ slopes show the difference between the age-$a$ and the 0-3 slopes. This specification allows for easy comparison across different outcomes, as all estimates are centered around zero when the constant selection assumption holds. Under constant selection across all the ages,  {all the interaction terms $\beta_a$ should be jointly zero}.\footnote{Even if all the slopes are not jointly zero, identification is possible within the subset of ages where the constant selection assumption holds. For instance, if the constant selection holds during the ages of 6 to 14 but not outside this range,  I can still identify the exposure effects between 6 and 14.}
+
+
+Figure \ref{fig:figure_6} presents  $\beta_a$ estimates for three sets of outcomes: destination characteristics in panels (a) and (b), reasons for migrating in panel (c), and socioeconomic characteristics in panel (d). 
+
+\tftext{\input{\thesispath/results/figures/figure_6.tex}}
+
+
+
+Figure \ref{fig:figure_6} panel (a) uses FLFP in the destination regency as the outcome variable. If parents from high-FLFP regions were increasingly selecting locations where more women work, the correlation between birthplace and destination FLFP should increase for older migrants. However, panel (a) shows that this correlation remains constant regardless of migration age, with all $\beta_a$ being insignificant and close to zero. Panel (b) shows similar results when using the share of women with at least middle school education in the destination regency as the outcome. This tests whether older migrants select locations with better education outcomes for women. Panel (b) shows no evidence of this.
+
+In panel (c), I test whether older migrants exhibit differential changes in their migration motives. The increase in birthplace persistence can reflect shifts in migration motives for older girls. The 1985 Intercensal Survey includes information on the self-reported reason for migrating, distinguishing between work, education, and other reasons.\footnote{The survey does not specify whose job initiated the move, although they presumably refer to the respondent's job. Moreover, although the Intercensal Survey bundles family-related reasons into ``other'', IFLS data suggests family-related reasons drive the great majority of the ``other'' category.} In panel (c), I narrow the sample to observations from the 1985 survey and use migration motives as the outcome. Due to the smaller sample size, I group migration ages into five-year bins for moves before 15.\footnote{Figure \ref{fig:figure_B2} in the appendix confirms that the increase in birthplace persistence of employment also holds in this smaller sample.}
+
+Panel (c) shows little evidence of changing selection for education moves (filled circles). I cannot reject that all coefficients are jointly zero with 95\% confidence. However, the panel suggests women from high-FLFP regencies become more likely to move for work as they grow older (hollow circles). This is indeed a concern for my results. Suppose the employment results were driven by work-related migration. In that case, the increase in persistence should disappear once I control for the work-move dummy (or its interaction with migration age dummies). I test this in appendix table \ref{tab:table_A10}. Column (1) shows that, at baseline, staying up to 16 is associated with an increase of 4.9 percentage points in employment. Columns (2) and (3) indicate that three-quarters of this increase remains after controlling for a work-migration dummy and its interactions with migration age.\footnote{Although this increase is no longer statistically significant, the sample in table \ref{tab:table_A10} is just one-sixth of the sample in my baseline results.}
+
+
+Finally, in panel (d), I present IFLS evidence on selection by childhood socioeconomic background. IFLS respondents provided retrospective information on their household characteristics when they were 12. Since the exact migration age is unavailable for moves before 12 years old, all coefficients in panel (d) represent the difference between age $a$ and 0-11 slopes.\footnote{The Intercensal Survey suggests the typical migrant in this group left at six years old.} The panel shows estimates when the outcomes are dummies indicating the father had formal employment and had more than 11 books at home. In developing countries, formal jobs often provide better pay and benefits, while the number of books at home is a proxy for parental education level. If birthplace effects were driven by selection on parental background, then I would expect a clear upward trend for both outcomes. This would reflect that richer and more educated parents from high-FLFP regencies became more likely to migrate as their children grew older. However, there is little evidence of this, and I cannot reject that the slopes are jointly zero with 95\% confidence.
+

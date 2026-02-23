@@ -1,0 +1,139 @@
+
+
+\section{Data appendix}
+
+
+\subsection{Cross-country data}
+\label{sec:country_data}
+Figure \ref{fig:figure_1} and Table \ref{tab:table_4} report local employment rates for men and
+women aged 18--64 across a broad cross-section of countries, using IPUMS International census
+samples and data from the Indian Census. For each country, I use the most recent available census, typically from 2010 or a nearby
+year.
+
+
+I define employment using the harmonized \emph{employment status}. For countries where this variable is unavailable, I construct employment from \emph{class of worker}, classifying people as employed if they report being self-employed, salaried, or unpaid workers. In China, employment is defined as having worked at least one day in the past week.
+
+Despite these definitional differences, Table \ref{table:table_A8} shows that the resulting
+employment rates closely align with female labor force participation (FLFP) rates reported by the
+International Labor Organization and the World Bank \citep{InternationalLaborOrganization2021}.
+\footnote{The only exception is the Philippines, where IPUMS International data imply substantially
+lower employment rates. In my data, the female employment rate for women aged 18--64 is 33\%,
+compared to an FLFP rate of 48\% for women aged 15+ in 2010 reported by ILOSTAT. This gap cannot be
+explained by female unemployment, which is around 4\%. However, as the analysis focuses on
+within-country dispersion, these discrepancies are second-order as long as measurement is consistent
+within country.} Remaining discrepancies for the United States, Vietnam, Thailand, and China are
+driven by differences in age ranges.
+
+I compute subnational employment rates at the lowest available geographic unit, which in most countries corresponds to districts, counties, or municipalities. The exception is the United States, where rates are computed at the commuting zone level \citep{Autor2013}. Table \ref{tab:country_sources} provides details on the units of aggregation and underlying samples.
+I winsorize the district employment rates at the 5th and 95th percentiles within each country to
+limit the influence of very small regions on the within-country dispersion.
+
+Data for India come from the 2011 Indian Census tabulations published by the Indian Office of the Registrar General \citep{Commissioner2011}. I compute district employment rates as the share of individuals aged 15--59 who report being main workers, defined as those working at least six months per year.
+
+
+\subsection{Indonesian Family Life Survey}
+\label{sec:ifls_appendix}
+I use data from the Indonesian Family Life Survey (IFLS) to replicate my main results from the Intercensal Survey and to study potential mechanisms. The IFLS is a panel survey that tracks data from approximately forty thousand individuals across five waves and is representative of about 83\% of the Indonesian population. In my analysis, I primarily use two survey modules: employment history and migration.
+
+I reconstruct individuals' employment histories using retrospective information from the employment module. In each of the five waves of the IFLS (1993, 1997, 2000, 2007, and 2014), respondents reported their employment status, sector of employment, and other job characteristics in the survey year and each of the five prior years.\footnote{They were also asked about wages and hours of work. However, this information is not available for all waves.} This allows me to construct a job-history panel tracking yearly employment status and job characteristics for each individual from 1988 to 2014. 
+
+I complement the job history panel with information on birthplace and migration history. The IFLS provides data about the respondent's regency of birth, the regency of residence at age 12, and detailed information on every migration episode after age 12. This includes the move year and the destination regency, allowing me to reconstruct a yearly history of the regencies of residence for each respondent from age 12 onwards.
+
+Similar to the Intercensal Survey, I define migration as a move across fixed-boundary regencies. I use the IPUMS regency boundary delineation to translate the IFLS regency codes into geographic units with fixed boundaries during 1970-2015. Although the IFLS tracks moves within the same regency, I do not treat them as migration in my analysis.
+
+I determine the age of migration using birthplace and migration history data. For respondents who were still living in their birthplace at age 12, I compute migration age based on the year of their first move. Since the survey asks about ``moves after you turned 12,'' I assign an age of 12 to those whose implied age of migration is below 12. For respondents whose location at age 12 differs from their birthplace, I only know that their first move occurred before they turned twelve.
+
+For my main results, I kept observations of respondents between 18 and 64 years old who lived outside their regency of birth. Most respondents migrated at most twice in their lives: 40\% migrated once, while 33\% migrated twice. Among those who migrated twice, 70\% are return migrants, meaning they lived outside their birthplace regency for several years before returning home. Consequently, for most individuals, my results reflect their work history in their new permanent residency or their history while living outside their birthplace. 
+
+Similar to the Intercensal Survey data, I bin the migration ages into four categories: 11 or less,   12 to 14, 15 to 16, and 17. This is because the number of migrants at early ages is small relative to the number of regencies. The first bin is unavoidable due to data limitations, while the next two bins were chosen so that migrant counts are roughly balanced across categories.
+
+\subsection{Pre-modern Cultural Practices}
+\label{sec:eth_atlas}
+Data on pre-modern cultural practices comes from the Ethnographic Atlas \citep{Murdock1967}. I follow \cite{Bau}'s procedure and match the Atlas data on 45 ethnicities to the 2010 Indonesian Census using the main language spoken at home. I extract data on practices related to gender or marriage, as defined below:
+\bitem
+\item \textit{Matrilocality}: newly-weds reside with bride's family after marriage.
+\item \textit{Emphasis on female chastity}: there is insistence on female virginity.
+\item \textit{Bride price}: upon marriage there's transfer of wealth to the bride's family.
+\item \textit{Plow agriculture}: practiced plow agriculture. Ancestral use of plow is associated with less equal norms \citep{AlesinaPaolaGiulianoNathanNunn2013}.
+\item \textit{Male agriculture}: agriculture is exclusively male.
+\item \textit{Polygamy}
+\eitem 
+
+\subsection{Aggregation of regencies}
+\label{sec:regency_aggregation}
+The total number of regencies varied considerably across years. In 1980, there were 286 regencies, but by 2010, there were 493. To ensure a consistent definition of the local labor market across the years, I aggregated regencies into 268 geographic units with fixed boundaries between 1980 and 2010. I took the boundary definitions directly from IPUMS International \citep{MinnesotaPopulationCenter2020}.
+
+For each survey, IPUMS provides a year-specific delineation for the regency of residency, the regency of birth, and a 
+fixed-boundary definition for the regency of current residence. In each survey, I use the mapping between then boundary-consistent and year-specific regencies of residency and apply it to the regency of birth to obtain the fixed-boundary regencies.
+
+%Because the geographic coverage of the Intercensal Survey varied across the years (see Figure \ref{fig:intercensal_coverage}), the mapping between the fixed-boundary and the year-specific regencies of birth is incomplete in 1995 and 2005. In these years, I use the --complete-- mapping from the previous census year to complete it.
+
+
+
+
+
+\section{Additional Details: Empirical Strategy}
+\label{sec:ap_empirical}
+
+\subsection{Place and women's labor supply: the identification challenge}
+\label{sec:model_explanation}
+
+
+The place of residence can directly and indirectly affect women's labor supply. Direct effects influence the labor supply of all current female residents. There is considerable empirical evidence documenting these effects, which may arise from factors such as the availability of childcare \citep{Compton2014}, commuting costs \citep{LeBarbanchon2021, Farre2021}, the industry makeup of employment \citep{Olivetti2014}, or the level of gender discrimination in the local labor market \citep{Charles2018}. Variations in these factors across localities can cause geographic differences in women's labor supply.
+
+
+However, place can also affect women indirectly by shaping their preferences and skills. Women born and raised in locations where many women work may internalize these norms, making them more likely to work as adults \citep{Charles2018, Boelmann}. Additionally, environments with high female employment may encourage women to invest in the skills needed to participate in the labor market \citep{Molina2022}. These enduring indirect effects create differences in labor supply among women from different locations, \textit{irrespective} of their current residence. Evidence of these indirect effects is much scarcer in the literature \citep{Charles2018}.
+
+
+
+
+\subsubsection*{The omitted variable problem}
+In this paper, my main interest lies in determining whether, conditional on the current place of residence, women's birthplace has a persistent influence on their work choices in adulthood. More formally, let us consider the following model for the probability of employment $e_{it}$ of a female migrant,
+\begin{eqnarray}
+	\label{eq:childhood_true}
+	e_{it}&=&\omega_{c(i)t}+\boldsymbol\sigma p_{b(i)}+\eta_{it}
+\end{eqnarray}
+
+In this model, women's employment choices depend on three main factors. First, the place-of-residence fixed effect $\omega_{c(i)}$ captures all the direct effects of location $c$ on female labor supply. These might include commuting costs, childcare availability, and gender discrimination. Second, the birthplace female employment $p_{b(i)}$ is intended to capture the causal effect of growing up in a location where $p_{b(i)}$ percent of the women work. Finally, the error term $\eta_{it}$ captures all other factors making some female migrants more likely to work than others.
+
+Model \eqref{eq:childhood_true} follows closely the tradition brought forth by the ``epidemiological'' approach literature \citep{Fernandeza,Fernandez2004,Fernandez2013}. Women's birthplace could have multiple impacts on women's behavior as adults. Including the prevailing female employment rates as the main regressor in equation \eqref{eq:childhood_true} relies on the idea that these rates capture place-driven factors vital in determining women's employment choices. Moreover, focusing on birthplace exposure allows me to isolate variation potentially driven by environmental factors --culture and institutions--, from variation driven by purely economic factors, such as wages and income. This specification also facilitates testing whether alternative channels are driving the relationship with the birthplace employment rates \citep{Fernandez2013}.
+
+In model \eqref{eq:childhood_true}, $\boldsymbol\sigma$ captures the birthplace effects. It gives the counterfactual increase in women's employment if they had been born in a place with one p.p. higher FLFP. In the ideal but unfeasible experiment, I would reassign women's birthplace randomly while keeping their family and the current residency fixed. Random assignment would guarantee that a woman's birthplace is uncorrelated with the error term. Thus, an OLS regression of \eqref{eq:childhood_true} would give a consistent estimate of $\boldsymbol\sigma$. In observational data, however, it is likely that the unobserved factors imbued in the error term are correlated with birthplace FLFP. Therefore, the OLS estimates of the FLFP slope will conflate the causal effects of birthplace with omitted variable bias:
+\beqn
+\plim\boldsymbol{\hat\sigma}&=&\boldsymbol\sigma + \frac{\cov(\tilde{p}_{b(i)},\tilde{\eta}_{it})}{\var{\tilde{p}_{b(i)}}}\notag\\
+\label{eq:gamma_def}
+&=&\boldsymbol\sigma + \boldsymbol\gamma 
+\eeqn
+where tilde accents denote variables that are residualized from regency-year fixed effects \citep{Angrist2009}. Expression \eqref{eq:gamma_def} shows that the OLS coefficient reflects two factors: first, the causal effect of birthplace $\boldsymbol{\sigma}$, but also differences in unobservable characteristics across women from different origins $\boldsymbol{\gamma}$. The critical identification challenge is separating the selection term $\boldsymbol{\gamma}$ from the birthplace effect $\boldsymbol\sigma$.
+
+The selection term $\boldsymbol{\gamma}$ highlights that even in the absence of a causal effect, birthplace could capture characteristics about a person or their family that are relevant to their work decision. In the paper, I argue that the causal effect of place is positive $(\boldsymbol{\sigma}>0)$. That is, being born in a place where more women work makes you more likely to work. In these circumstances, I am more concerned with omitted variable --or selection-- bias making women from high-FLFP locations more likely to work than their low-employment counterparts. %For example, previous research shows that connection to working mothers make women more likely to work \citep{Fernandez2004}. Even in the absence of a causal effect, a positive $\boldsymbol{\hat\sigma}$ could simply be reflecting that, in places where more women work, girls are more likely to be connected to working mothers.
+
+
+\subsubsection*{Using migration age data to identify place effects}
+Under additional assumptions, migration age data allows me to distinguish selection from place effects. The argument is similar to that of \cite{Chetty2018}.  I assume that place effects are stronger the longer women stay there. Thus, the employment choice for women who emigrated at age $a$ is determined as follows:
+\begin{eqnarray}
+	\label{eq:childhood_true_age}
+	e_{it}&=&\omega_{c(i)at}+\boldsymbol\sigma_a p_{b}+\eta_{it}
+\end{eqnarray}
+Here $\boldsymbol\sigma_a$ captures the cumulative effect of birthplace up to age $a$\footnote{The causal effect $\boldsymbol{\sigma}$ in the previous subsection can be interpreted as a weighted average of age-specific causal effects.}. The causal impact of staying in the birthplace at age $a$ is then $\boldsymbol\pi_a=\boldsymbol\sigma_{a}-\boldsymbol\sigma_{a-1}$.
+
+By an argument analogous to that in expression \eqref{eq:gamma_def}, the OLS estimates will conflate the causal effects of birthplace $\boldsymbol\sigma_a$ with the omitted variable bias for women migrating at age $a$ $\boldsymbol{\gamma_a}$:%\footnote{You can find the full derivation of this expression in appendix section \ref{sec:ap_empirical}. I defined $\gamma_a$ as the $a$-th element in the vector $\plim\left[(\widetilde{P}'\widetilde{P})^{-1}\widetilde{P}'\tilde{\boldsymbol\eta}\right]$. Here, $P$ is the matrix containing the interaction between the age of emigration dummies and the birthplace female employment rates. $\boldsymbol\eta$ is the vector of error terms. Tilde-accented variables are residualized from current location and age of emigration dummies.}
+\beqn
+\plim \boldsymbol{\hat\sigma}_a&=&\boldsymbol\sigma_a + \boldsymbol\gamma_a
+\eeqn
+
+
+\begin{assumption}{\textbf{Constant omitted variable bias}} \\
+	Omitted variable is the same no matter the age of emigration, that is $\boldsymbol{\gamma}_{a}=\boldsymbol{\gamma}$
+\end{assumption}
+
+This assumption requires that conditional on the location-year-age fixed effects, the correlation between birthplace FLFP and the error term is the same for women who migrated at different ages. To make this point more concrete, let us consider work-related migration as an example. It is conceivable that women who migrated with work in mind would be more likely to be employed in their destination, and women in their 20s would be more likely to migrate because of work than 12-year-old women. At first glance, this would seem to invalidate the identification strategy. However, my strategy does not require that women migrating at different ages have the same likelihood of migrating for work. Rather, it requires a much weaker condition: the correlation between birthplace FLFP and the likelihood of work migration is the same for women migrating at different ages. Therefore, even though older teenagers are more likely to migrate for work, this does not necessarily violate the identification assumption. 
+
+Under the constant omitted variable bias assumption, I can isolate the birthplace effect from the omitted variable bias. By subtracting the OLS estimates of the slopes at different migration ages, the constant selection term $\boldsymbol\gamma$ goes away, leaving only the place effects:
+\begin{eqnarray}
+	\plim \boldsymbol{\hat\sigma_{a}}-\boldsymbol{\hat\sigma_{a-1}}&=&\boldsymbol\sigma_{a}-\boldsymbol\sigma_{a-1}\notag\\
+	&=&\boldsymbol\pi_a
+\end{eqnarray}
+this expression also shows that identification does not necessarily require constant bias across all \textit{all} migration ages. If, instead, bias is constant only within some age ranges, I can still identify the effects within these ranges. For example, suppose there is reason to believe that the bias for women who migrated between 0 to 6 years is different than for those who migrated between the ages of 7 and 15. If constant selection holds \textit{within} these ranges, I can still identify the place effects within the 0 to 6 and 7 to 15 ranges, respectively. 
+
+

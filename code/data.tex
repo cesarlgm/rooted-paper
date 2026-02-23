@@ -1,0 +1,31 @@
+\section{Data}
+%There are two things that bug me about this section.
+\label{sec:data}
+
+
+\subsection{Data sources}
+My main analyses use data from the Indonesian Intercensal Survey (SUPAS) and the Indonesian Family Survey (IFLS). These datasets record detailed data on people's birthplaces, migration histories, and labor supply. I supplement them with place characteristics from the Indonesian Census, the National Socioeconomic Survey (SUSENAS), and data on traditional practices from the Ethnographic Atlas.
+
+My primary results come from the Intercensal Survey \citepalias{IS1985,MinnesotaPopulationCenter2020}, a decennial survey containing social and demographic information for approximately 0.5\% of the Indonesian population.  This dataset has two advantages that make it uniquely suitable to study place effects on female labor supply. First, it records people's birthplace, previous location, and current location at the ``regency'' level. Regencies are administrative units similar to US counties commonly used as proxies for local labor markets \citep{Magruder2013, Bazzi2022}. Their size allows me to study differences in women's employment across smaller geographic units than is possible with alternative datasets.\footnote{Datasets available for other countries track geographic information only for states or provinces, which in most cases are either too big or too few to be interesting \citep{Bryan2019}.}
+
+Second, rich migration data allows me to recover the age at which people left their birthplace. The survey records how long each respondent has lived in their current location. With this data, I can determine the age at which individuals \emph{who have only migrated once in their lifetime} left their birthplace. These are people whose previous place of residence is the same as their birthplace. This is the key variation that I exploit in my identification strategy. 
+
+I supplement my main results using data from the IFLS, a representative panel that contains rich socioeconomic information that allows for the study of potential confounders \citepalias{IS1985}. However, this comes at the cost of a smaller sample size. The panel tracks approximately 34,000 Indonesians across five survey years: 1993, 1997, 2000, 2007, and 2014.\footnote{I use retrospective work and migration history questions to create a panel tracking the respondents' location history since birth and their yearly employment history from 1988 to 2014. Additional details on the IFLS sample are available in appendix section \ref{sec:ifls_appendix}.}
+
+
+I source data on the prevalence of cultural practices from the Ethnographic Atlas \citep{Murdock1967}. The atlas records traditional and pre-modernization practices at the ethnic group level. Following \cite{Bau}, I match the practices of 45 ethnic groups to individual data from the 2010 Indonesian Census using the language spoken at home. I then aggregate the data at the regency level. I focus on practices closely related to gender or marriage: location after marriage, emphasis on female chastity, bride price, use of plow agriculture, and polygamy. For more details about the definition of these variables, please refer to appendix \ref{sec:eth_atlas}.
+
+
+I extract place characteristics from the 1980-2010 Indonesian Decennial Censuses \citepalias{IC1980, MinnesotaPopulationCenter2020}  and 2012, 2013, and 2014 National Socieconomic Surveys (SUSENAS) \citep{BadanPusatStatistik2019a, BadanPusatStatistik2020}. The Censuses and SUSENAS are similar, but the Census has larger samples. I compute all regency characteristics by restricting the sample to people aged 18 to 64 and aggregating it at the regency level. Whenever possible, I compute these aggregates from the censuses.
+
+
+
+\subsection{Measurement}
+\label{sec:measurement}
+My main measure of women's labor supply is a dummy equal to one if she was employed during the year.\footnote{This definition classifies unpaid and family workers as employed. The patterns I discuss look similar when I focus on paid workers only.} This is the variable I can most consistently track across years and datasets. As a robustness check, I also examine alternative measures such as being a paid worker, total weekly hours worked, and being a full-time worker.
+
+I link women's labor supply choices to the characteristics of their birthplace. This requires having geographic units with boundaries that remain fixed over time. Unfortunately, regency boundaries underwent significant changes from decade to decade. For example, just between 2000 and 2010, 154 new regencies were established. To address this issue, I use regency aggregates with fixed boundaries between 1970 and 2010. These aggregates were built by IPUMS International and consist of 268 geographic units that are slightly larger than the ``original" regencies in the data \citep{MinnesotaPopulationCenter2020}. Moving forward, I refer to these regency aggregates as regencies. For additional details, refer to appendix \ref{sec:regency_aggregation}.
+
+I proxy for moving distances by calculating the distance between current and birthplace regencies centroids. Although this method might overestimate distances for moves around the borders of neighboring regencies, it is a good proxy for moves between non-contiguous regencies.
+
+I define migration as living outside one's birthplace regency. For my main analysis, I restrict the sample to one-time internal migrants. This allows me to separate the effects of the birthplace from those of the current location and determine the migration age. When I link women's employment to birthplace characteristics, such as FLFP or urbanicity, I source these from the 2010 Indonesian Census.
