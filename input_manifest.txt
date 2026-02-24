@@ -11,4 +11,8 @@ fig/figure_idn_flfp_map_paper.tex;figure_idn_flfp_map_paper.tex
 fig/figure_idn_flfp_map.png;figure_idn_flfp_map.png
 
 
+#IDN FLFP map
+fig/figure_cross_country_flfp_persistence_paper.tex;figure_cross_country_flfp_persistence_paper.tex
+fig/figure_cross_country_flfp_persistence.png;figure_cross_country_flfp_persistence.png
+
 
