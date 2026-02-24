@@ -10,16 +10,14 @@
 \newcommand{\toEdit}[1]{{\color{BrickRed}[TO EDIT: #1]}}
 
 %Indicators that disappear when in final mode
-\newcommand{\toWrite}[2]{\ifdraft{\color{RoyalBlue}[TO WRITE: #1]}\else#2\fi
-}
-\newcommand{\note}[1]{\ifdraft{\color{color1}[NOTE: #1]}\else\fi
-}
+\newcommand{\toWrite}[2]{\ifdraft{\color{RoyalBlue}[TO WRITE: #1]}\else#2\fi}
+\newcommand{\note}[1]{\ifdraft{\color{color1}[NOTE: #1]}\else\fi}
 %Command to say that the number was hard coded
 \newcommand{\hardCoded}[1]{\ifdraft{\color{red}#1}\else#1\fi}
 \newcommand{\coded}[1]{\ifdraft{\color{ForestGreen}#1}\else#1\fi}
 
 
-\newcommand{\toVerify}[1]{
+\newcommand{\toVerify}[1]{%
     \ifdraft
         {\color{blue}[TO VERIFY: #1]}
     \else 

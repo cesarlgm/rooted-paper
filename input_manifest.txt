@@ -2,4 +2,6 @@
 #PATTERN: destination;origin
 #Cross-country comparison tables
 tab/table_cross_country_dispersion_main.tex;table_cross_country_dispersion_main.tex
+tab/table_idn_flfp_persistence.tex;table_idn_flfp_persistence.tex
+
 

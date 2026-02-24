@@ -18,8 +18,7 @@
 	}{\end{enumerate}}
 \newenvironment{tight_itemize}{
 	\begin{itemize}
-		\setlength{\topsep}q
-		{0pt}
+		\setlength{\topsep}{0pt}
 		\setlength{\itemsep}{0pt}
 		\setlength{\parskip}{0pt}
 	}{\end{itemize}}
@@ -41,13 +40,20 @@
 \newcommand{\etight}{\end{tight_itemize}}
 \newcommand{\scsubref}[1]{(\textsc{\subref*{#1}})}
 
+\newcommand{\sigmab}{\boldsymbol\sigma}
+\newcommand{\agesigma}{\boldsymbol\sigma_a}
+\newcommand{\plim}{\text{plim }}
+\newcommand{\cov}{\text{cov}}
+\newcommand{\var}[1]{\text{var}\left(#1\right)}
+\newcommand{\blue}[1]{\color{blue}{#1}}
+\newcommand{\green}[1]{{\color{Green}#1}}
+
 %Color shortcuts
 \newcommand{\red}[1]{{\color{red}#1}}
 \newcommand{\orange}[1]{\textcolor{orange}{\bfseries #1}}
 \definecolor{lightgray2}{gray}{0.975}
 \definecolor{lightgray3}{gray}{0.75}
 \newcommand{\gray}[1]{\textcolor{lightgray3}{#1}}
-\newcommand{\green}[1]{\textcolor{ForestGreen}{#1}}
 
 \renewcommand{\emph}[1]{\textit{#1}}
 
@@ -59,4 +65,4 @@
 \newcommand{\expect}{\mathbb{E}}
 \newcommand{\nopsubref}[1]{\textsc{\oldsubref*{#1}}}
 
-
+\newtheorem{assumption}{Assumption}
