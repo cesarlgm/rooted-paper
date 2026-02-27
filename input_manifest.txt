@@ -1,5 +1,10 @@
-
 #PATTERN: destination;origin
+
+#Intro figure
+fig/figure_cross_country_wrapper_paper.tex;figure_cross_country_wrapper_paper.tex
+fig/figure_cross_country.png;figure_cross_country.png
+
+
 #Cross-country comparison tables
 tab/table_cross_country_dispersion_main.tex;table_cross_country_dispersion_main.tex
 
