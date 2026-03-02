@@ -21,3 +21,5 @@ fig/figure_cross_country_flfp_persistence_paper.tex;figure_cross_country_flfp_pe
 fig/figure_cross_country_flfp_persistence.png;figure_cross_country_flfp_persistence.png
 
 
+#Main summary stats table
+tab/table_main_summ_stats.tex;table_main_summ_stats.tex
