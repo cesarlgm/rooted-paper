@@ -23,3 +23,6 @@ fig/figure_cross_country_flfp_persistence.png;figure_cross_country_flfp_persiste
 
 #Main summary stats table
 tab/table_main_summ_stats.tex;table_main_summ_stats.tex
+
+#Migration flows table
+tab/table_migflows_stats.tex;table_migflows_stats.tex
