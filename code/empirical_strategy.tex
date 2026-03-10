@@ -3,12 +3,12 @@
 I start this section by showing that, conditional on the current place of residence, birthplace is highly predictive of women's labor supply in adulthood. This persistence can reflect the causal effect of birthplace or a spurious correlation driven by women's unobserved characteristics. I use data on age at migration to separate these two sources of variation and show evidence that the longer female migrants stay in their birthplace, the stronger its predictive power. I interpret this as evidence that a longer stay has a causal effect on women's labor supply decisions.
 
 
-\subsection{Birthplace is highly predictive of women's labor supply}	
+\subsection{Birthplace FLFP is highly predictive of women's labor supply}	
 \label{sec:explanation}
 I start by comparing the labor supply of women who \textit{live in the same location} but were born in different regencies using a specification inspired by the epidemiological approach from \cite{Fernandez2009}. I regress a dummy equal to one if the person is employed in year $t$ ($ e_{it}$) on year by current-regency fixed effects  ($\omega_{c(i)t}$), birthplace FLFP rate ($p_{b(i)}$), and a set of individual and regency-level controls $X_{it}$. They might include age, religion, education, etc.
 \begin{eqnarray}
 	\label{eq:childhood_main}
-	e_{it}&=&\omega_{c(i)t}+\boldsymbol b p_{b(i)}+X_{it}\kappa+\varepsilon_{it}
+	e_{it}&=&\omega_{dt}+\boldsymbol \beta FLFP_{it}+\phi MLFP_{it}+X_{it}\kappa+\varepsilon_{it}
 \end{eqnarray}
 The rationale for including birthplace FLFP rates as a regressor is that they capture all the factors that help determine the regency's aggregate female labor supply \citep{Fernandez2009}.\footnote{\cite{Fernandez2009} focus their exercise on second-generation immigrants in the US to test transmission of gender norms. The analogous exercise in my context would use the children of internal migrants. However, the Intercensal Survey does not track parents' regency of birth.} I compute these rates using data from the 2010 census for all women aged 18 to 64.\footnote{The results are robust to changes in the age range used to compute FLFP rates. The participation rates of women aged 18-64 are almost perfectly correlated with those of women aged 18-50.}
 
