@@ -26,3 +26,8 @@ tab/table_main_summ_stats.tex;table_main_summ_stats.tex
 
 #Migration flows table
 tab/table_migflows_stats.tex;table_migflows_stats.tex
+
+
+#Main persistence table
+tab/table_baseline_birthplace_persistence_exp.tex;table_baseline_birthplace_persistence_exp.tex
+

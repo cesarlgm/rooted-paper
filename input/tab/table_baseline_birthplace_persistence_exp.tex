@@ -1,0 +1,55 @@
+\begin{center}
+\begin{adjustbox}{max width=1\textwidth}
+\begin{threeparttable}[!h]
+\caption{Birthplace FLFP Predicts Women's Labor Supply in Adulthood}
+\label{tab:tab:baseline_bp_exp}
+\begin{tabular}{lcccccccc}
+\toprule
+& \multicolumn{4}{c}{{\scshape Female migrants}} & \multicolumn{4}{c}{{\scshape Male migrants}} \\ \cmidrule(r){2-5} \cmidrule(l){6-9}
+{ \scshape  }&\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}&\multicolumn{1}{c}{(7)}&\multicolumn{1}{c}{(8)} \\
+\midrule
+\scshape A. All Migrants\\
+Birthplace FLFP     &       0.138\sym{***}&       0.126\sym{***}&       0.158\sym{***}&       0.159\sym{***}&       0.042\sym{*}  &       0.018         &       0.058\sym{***}&       0.065\sym{***}\\
+                    &     (0.018)         &     (0.021)         &     (0.020)         &     (0.020)         &     (0.018)         &     (0.017)         &     (0.016)         &     (0.014)         \\
+Birthplace MLFP     &                     &       0.055         &       0.047         &       0.067         &                     &       0.109\sym{**} &       0.093\sym{**} &       0.050\sym{*}  \\
+                    &                     &     (0.050)         &     (0.047)         &     (0.047)         &                     &     (0.036)         &     (0.030)         &     (0.024)         \\
+Primary completed   &                     &                     &                     &      -0.094\sym{***}&                     &                     &                     &      -0.009\sym{**} \\
+                    &                     &                     &                     &     (0.005)         &                     &                     &                     &     (0.003)         \\
+Secondary completed &                     &                     &                     &      -0.040\sym{***}&                     &                     &                     &      -0.083\sym{***}\\
+                    &                     &                     &                     &     (0.008)         &                     &                     &                     &     (0.003)         \\
+College completed   &                     &                     &                     &       0.190\sym{***}&                     &                     &                     &      -0.053\sym{***}\\
+                    &                     &                     &                     &     (0.013)         &                     &                     &                     &     (0.005)         \\
+\midrule District-year FE&$ \checkmark $&$ \checkmark $&$ \checkmark $&$ \checkmark $&$ \checkmark $&$ \checkmark $&$ \checkmark $&$ \checkmark $\\
+Age and its square  &            &            &$ \checkmark $&$ \checkmark $&            &            &$ \checkmark $&$ \checkmark $\\
+\midrule Mean employment&       0.424&       0.424&       0.424&       0.424&       0.873&       0.873&       0.873&       0.873\\
+SD employment       &       0.494&       0.494&       0.494&       0.494&       0.333&       0.333&       0.333&       0.333\\
+Within $ R^2 $      &       0.002&       0.002&       0.011&       0.024&       0.000&       0.001&       0.151&       0.162\\
+$ R^2 $             &       0.065&       0.065&       0.073&       0.085&       0.053&       0.053&       0.196&       0.206\\
+\midrule Observations&     106,545&     106,545&     106,545&     106,545&     111,528&     111,528&     111,528&     111,528\\
+\midrule \scshape B. Migrated Young\\
+Birthplace FLFP     &       0.103\sym{***}&       0.097\sym{***}&       0.142\sym{***}&       0.154\sym{***}&      -0.025         &      -0.065\sym{*}  &       0.098\sym{***}&       0.085\sym{***}\\
+                    &     (0.022)         &     (0.024)         &     (0.025)         &     (0.025)         &     (0.030)         &     (0.031)         &     (0.024)         &     (0.020)         \\
+Birthplace MLFP     &                     &       0.023         &       0.008         &       0.027         &                     &       0.175\sym{*}  &       0.131\sym{*}  &       0.088\sym{*}  \\
+                    &                     &     (0.062)         &     (0.064)         &     (0.063)         &                     &     (0.088)         &     (0.058)         &     (0.042)         \\
+Primary completed   &                     &                     &                     &      -0.069\sym{***}&                     &                     &                     &      -0.011\sym{*}  \\
+                    &                     &                     &                     &     (0.008)         &                     &                     &                     &     (0.005)         \\
+Secondary completed &                     &                     &                     &      -0.014         &                     &                     &                     &      -0.136\sym{***}\\
+                    &                     &                     &                     &     (0.013)         &                     &                     &                     &     (0.007)         \\
+College completed   &                     &                     &                     &       0.206\sym{***}&                     &                     &                     &      -0.149\sym{***}\\
+                    &                     &                     &                     &     (0.022)         &                     &                     &                     &     (0.014)         \\
+\midrule District-year FE&$ \checkmark $&$ \checkmark $&$ \checkmark $&$ \checkmark $&$ \checkmark $&$ \checkmark $&$ \checkmark $&$ \checkmark $\\
+Age and its square  &            &            &$ \checkmark $&$ \checkmark $&            &            &$ \checkmark $&$ \checkmark $\\
+\midrule Mean employment&       0.408&       0.408&       0.408&       0.408&       0.805&       0.805&       0.805&       0.805\\
+SD employment       &       0.491&       0.491&       0.491&       0.491&       0.396&       0.396&       0.396&       0.396\\
+Within $ R^2 $      &       0.001&       0.001&       0.009&       0.018&       0.000&       0.001&       0.158&       0.179\\
+$ R^2 $             &       0.077&       0.077&       0.084&       0.093&       0.089&       0.090&       0.233&       0.252\\
+\midrule Observations&      33,780&      33,780&      33,780&      33,780&      29,091&      29,091&      29,091&      29,091\\
+\bottomrule
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\item \footnotesize \textit{Notes:} This table regresses an employment indicator on experienced birthplace FLPF and MLFP, current district fixed effects, and other individual characteristics. Panel A restricts the sample to one-time migrants, while Panel B restricts it to one-time migrants who left their birthplace before they turned 18. The coefficients are normalized so that they can be interpreted as a change in the likelihood of employment from an IQR increase in experienced FLFP. When indicated, regressions control for a quadratic polynomial in age and fixed effects for four education categories. Standard errors clustered by regency of birth in parentheses. Data from the pooled 1985, 1995, and 2005 Intercensal Surveys. 
+\end{tablenotes}
+\end{threeparttable}
+\end{adjustbox}
+\end{center}
